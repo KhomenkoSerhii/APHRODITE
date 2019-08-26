@@ -37,6 +37,15 @@ span {
     line-height: 30px;
 }
 
+ul {
+    list-style: none;
+}
+
+.slick-prev,
+.slick-next {
+    display: none !important;
+}
+
 header {
     overflow: hidden;
     position: fixed;
@@ -75,11 +84,11 @@ header {
 
             &:hover {
                 border-bottom: 3px solid #000000;
+
             }
         }
     }
 }
-
 
 
 .banner .content {
@@ -107,11 +116,11 @@ header {
 }
 
 .read {
-    display: grid;
-    margin: 140px auto;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
-    padding: 5px;
+    display: flex;
+    margin: 140px auto 100px;
+    justify-content: space-between;
+
+    padding-left: 5px;
 
     .readmore {
         display: grid;
@@ -142,9 +151,8 @@ header {
     background-repeat: no-repeat;
     background-position: center 13%;
     background-size: 70%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
+    display: flex;
+    justify-content: space-between;
 
     h4 {
         margin: 0;
@@ -152,10 +160,12 @@ header {
         font-weight: 700;
         line-height: 70px;
         text-transform: uppercase;
+        padding: 0 5px;
     }
 
     .greece-readmore {
         max-width: 550px;
+        padding: 0 5px;
     }
 
     .figure-greece {
@@ -198,9 +208,9 @@ header {
         margin: 0;
         text-shadow: 0 0 20px rgba(48, 48, 48, 0.7);
         color: #ffffff;
-        font-size: 50px;
+        font-size: 46px;
         font-weight: 700;
-        line-height: 70px;
+
         text-transform: uppercase;
         position: absolute;
         top: 38%;
@@ -238,15 +248,16 @@ header {
 
 .slick-dotted.slick-slider {
     max-width: 800px;
-    margin: 0 auto;
+
     text-align: center;
-}
- 
-button .slick-prev.slick-arrow{
-     display: none;
+    margin: 0 auto;
 }
 
-.categories{
+button .slick-prev.slick-arrow {
+    display: none;
+}
+
+.categories {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
@@ -255,23 +266,99 @@ button .slick-prev.slick-arrow{
 
 
 
-.med{
+.med {
     background: url('../img/grey-bg-girl.png');
     background-repeat: no-repeat;
-    
     background-position: center;
     background-size: 70%;
     display: grid;
     grid-template-columns: 1fr 1fr;
+
+    article {
+        padding: 0 5px;
+
+        a {
+            color: #000000;
+            font-size: 20px;
+            font-weight: 700;
+        }
+    }
+
 }
 
 
 
+footer {
+    margin: 40px 0;
+    text-align: center;
 
+    .about {
+        ul {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+
+            li {
+                &:not(.last):after {
+                    content: "-";
+                    margin: 0 20px;
+                }
+
+                a {
+                    color: #000000;
+                    font-size: 20px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        p {
+            max-width: 930px;
+            margin: 0 auto;
+        }
+
+    }
+
+    .social {
+        margin: 30px 0;
+
+        a {
+            padding: 0 10px;
+        }
+
+        .fa {
+            font-size: 38px;
+        }
+
+        .fa-facebook {
+            color: #205b9f
+        }
+
+        .fa-twitter {
+            color: #00ace3;
+        }
+
+        .fa-youtube {
+            color: #ff4d3f;
+        }
+
+        .fa-dribbble {
+            color: #ff72a5;
+        }
+
+        .fa-instagram {
+            color: #2e7fa6;
+        }
+    }
+}
 
 @media screen and (max-width: 1200px) {
+
+
     .read {
         justify-content: space-around;
+        margin: 90px auto 20px;
 
         .readmore {
             text-align: center;
@@ -279,12 +366,20 @@ button .slick-prev.slick-arrow{
         }
 
         h4 {
-            font-size: 40px;
+            font-size: 12px;
         }
+    }
 
-        
+
+}
+
+
+@media screen and (max-width: 1024px) {
+    .newsletter h3 {
+        font-size: 30px;
     }
 }
+
 
 @media screen and (max-width: 820px) {
 
@@ -334,4 +429,68 @@ button .slick-prev.slick-arrow{
     }
 
 
+}
+
+@media screen and (max-width: 768px) {
+    span {
+        font-size: 12px;
+    }
+
+    h5 {
+        font-size: 8px;
+    }
+
+    p {
+        line-height: 16px;
+        font-size: 12px;
+    }
+
+    .read {
+        margin: 95px auto 30px;
+
+        .readmore {
+            display: block;
+
+            h5 {
+                margin: 0;
+                font-size: 8px;
+            }
+        }
+
+
+    }
+
+    .greece h4 {
+        font-size: 12px;
+    }
+
+    .newsletter {
+        margin-top: 15px;
+
+        h3 {
+            font-size: 12px;
+        }
+    }
+
+    .med article a {
+        font-size: 8px;
+    }
+
+    .newsletter .btn {
+        font-size: 9px;
+        width: 81px;
+        height: 18px;
+    }
+
+    footer .about ul li a {
+        font-size: 8px;
+    }
+
+    footer .social .fa {
+        font-size: 6vw;
+    }
+
+    footer .about ul li:not(.last):after {
+        margin: 0 5px;
+    }
 }
